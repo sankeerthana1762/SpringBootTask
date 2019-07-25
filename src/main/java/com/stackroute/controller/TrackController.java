@@ -1,6 +1,8 @@
 package com.stackroute.controller;
 
 import com.stackroute.domain.Track;
+import com.stackroute.exceptions.TrackAlreadyExistsException;
+import com.stackroute.exceptions.TrackNotFoundException;
 import com.stackroute.service.TrackService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +31,11 @@ public class TrackController {
         try {
             trackService.saveTrack(track);
             responseEntity = new ResponseEntity("Successfully created", HttpStatus.CREATED);
-        } catch (Exception ex) {
+        } catch (TrackAlreadyExistsException ex) {
             responseEntity = new ResponseEntity<String>(ex.getMessage(), HttpStatus.CONFLICT);
         }
         return responseEntity;
+
     }
 
     //getting all tracks handler
@@ -54,7 +57,7 @@ public class TrackController {
             trackService.deleteTrack(trackId);
             responseEntity = new ResponseEntity("Deleted Successfully",HttpStatus.OK);
         }
-        catch (Exception e) {
+        catch (TrackNotFoundException e) {
             responseEntity = new ResponseEntity(e.getMessage(),HttpStatus.CONFLICT);
         }
 
@@ -68,11 +71,12 @@ public class TrackController {
         ResponseEntity responseEntity;
         try {
             responseEntity = new ResponseEntity(trackService.updateTrack(trackDetails,trackId),HttpStatus.OK);
-        } catch (Exception e) {
+        } catch(Exception e) {
             responseEntity = new ResponseEntity(e.getMessage(),HttpStatus.CONFLICT);
         }
         return responseEntity;
     }
+
 
 }
 
