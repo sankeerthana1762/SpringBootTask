@@ -4,7 +4,9 @@ package com.stackroute.domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+
+@Document
+@Data
 public class Track {
 
     @Id
