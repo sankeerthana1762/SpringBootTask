@@ -24,10 +24,11 @@ public class TrackController {
     public TrackController(TrackService trackService) {
         this.trackService= trackService;
     }
+            ResponseEntity responseEntity;
+
     //add handler
     @PostMapping("saveTrack")
     public ResponseEntity<?> saveUser(@RequestBody Track track) {
-        ResponseEntity responseEntity;
         try {
             trackService.saveTrack(track);
             responseEntity = new ResponseEntity("Successfully created", HttpStatus.CREATED);
@@ -42,7 +43,6 @@ public class TrackController {
     @GetMapping("allTracks")
     public ResponseEntity<?> getAllTracks()
     {
-        ResponseEntity responseEntity;
 
         responseEntity = new ResponseEntity<List<Track>>(trackService.getAllTracks(), HttpStatus.OK);
 
@@ -52,7 +52,6 @@ public class TrackController {
     //delete handler
     @DeleteMapping("/track/{id}")
     public ResponseEntity<?> deleteTrack(@PathVariable(value="id") int trackId) {
-        ResponseEntity responseEntity;
         try {
             trackService.deleteTrack(trackId);
             responseEntity = new ResponseEntity("Deleted Successfully",HttpStatus.OK);
@@ -68,7 +67,6 @@ public class TrackController {
     @PutMapping("/track/{id}")
     public ResponseEntity<?> updateTrack(@PathVariable(value="id")int trackId,@RequestBody Track trackDetails)
     {
-        ResponseEntity responseEntity;
         try {
             responseEntity = new ResponseEntity(trackService.updateTrack(trackDetails,trackId),HttpStatus.OK);
         } catch(Exception e) {
