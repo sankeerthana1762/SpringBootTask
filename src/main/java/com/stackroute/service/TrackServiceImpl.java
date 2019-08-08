@@ -30,14 +30,12 @@ public class TrackServiceImpl implements TrackService {
     }
 
     @Override
-    public boolean deleteTrack(int id) {
+    public Track deleteTrack(int id) {
         if (userRepository.existsById(id)) {
             Track track = getTrackById(id);
             userRepository.delete(track);
-            return true;
-        } else {
-            return false;
-        }
+            return track;
+        } 
     }
 
     @Override
