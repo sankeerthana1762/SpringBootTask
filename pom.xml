@@ -24,12 +24,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.193</version>
-		</dependency>
-
+		
 		<dependency>
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
@@ -55,12 +50,7 @@
 			<version>2.3.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>5.1.8.RELEASE</version>
-		</dependency>
-
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
@@ -72,12 +62,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.elasticsearch</groupId>
-			<artifactId>elasticsearch</artifactId>
-			<version>2.3.4</version>
-		</dependency>
-
+		
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -98,13 +83,7 @@
 			<version>2.9.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/eu.codearte.catch-exception/catch-exception -->
-		<dependency>
-			<groupId>eu.codearte.catch-exception</groupId>
-			<artifactId>catch-exception</artifactId>
-			<version>1.4.6</version>
-			<scope>test</scope>
-		</dependency>
-
+		
 
 	</dependencies>
 
