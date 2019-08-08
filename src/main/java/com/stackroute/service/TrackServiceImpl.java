@@ -20,21 +20,19 @@ public class TrackServiceImpl implements TrackService {
 
 
     @Override
-    public boolean saveTrack(Track track) {
+    public Track saveTrack(Track track) {
 
-        userRepository.save(track);
-        return true;
+       Track savedTrack = userRepository.save(track);
+        return track;
     }
 
     @Override
-    public boolean deleteTrack(int id) {
+    public Track deleteTrack(int id) {
         if (userRepository.existsById(id)) {
             Track track = getTrackById(id);
             userRepository.delete(track);
-            return true;
-        } else {
-            return false;
-        }
+            return track;
+        } 
     }
 
     @Override
