@@ -8,9 +8,9 @@ import java.util.Optional;
 
 public interface TrackService {
 
-    public boolean saveTrack(Track track);
+    public Track saveTrack(Track track);
 
-    public boolean deleteTrack(int id);
+    public Track deleteTrack(int id);
 
     public List<Track> getAllTracks();
 
